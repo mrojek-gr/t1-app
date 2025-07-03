@@ -1,1 +1,6 @@
-<p>users works!</p>
+<ul class="users-list">
+  <li *ngFor="let user of users$ | async">
+    <app-user-card [user]="user"></app-user-card>
+  </li>
+</ul>
+<app-paging-buttons />

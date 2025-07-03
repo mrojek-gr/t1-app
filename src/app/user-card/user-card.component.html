@@ -1,0 +1,19 @@
+<div
+  class="p-2 bg-gray-100 rounded-b-md shadow hover:shadow-lg transition cursor-pointer"
+>
+  <mat-card class="user-card">
+    <mat-card-header>
+      <mat-card-title
+        >{{ user.first_name }} {{ user.last_name }}</mat-card-title
+      >
+    </mat-card-header>
+    <img
+      mat-card-image
+      [src]="user.avatar"
+      alt="Photo of {{ user.first_name }} {{ user.last_name }}"
+    />
+    <mat-card-actions>
+      <button matButton>Go to profile</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
