@@ -11,9 +11,12 @@
       mat-card-image
       [src]="user.avatar"
       alt="Photo of {{ user.first_name }} {{ user.last_name }}"
+      class="user-img"
     />
-    <mat-card-actions>
-      <button matButton>Go to profile</button>
+    <mat-card-actions class="user-btn-wrapper">
+      <button mat-raised-button [routerLink]="['/users', user.id]">
+        Go to profile
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

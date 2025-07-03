@@ -4,4 +4,17 @@
   width: 12rem;
   border: none;
   box-shadow: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.user-img {
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto;
+}
+
+.user-btn-wrapper {
+  display: flex;
+  justify-content: center;
 }
