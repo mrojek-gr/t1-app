@@ -1,3 +1,17 @@
-<div *ngIf="user$ | async as user">
-  {{ user.first_name }} {{ user.last_name }}
+<div
+  *ngIf="user$ | async as user"
+  class="p-8 flex gap-5 border-gray-300 rounded-lg border-4 w-10/12 mx-auto"
+>
+  <img
+    *ngIf="user.avatar"
+    [src]="user.avatar"
+    alt="User Avatar"
+    class="rounded-full mb-4 flex-2 h-auto"
+  />
+  <div
+    class="flex-3 flex flex-col justify-center items-center p-4 rounded-lg gap-4 text-2xl"
+  >
+    <p>{{ user.first_name }} {{ user.last_name }}</p>
+    <p>{{ user.email }}</p>
+  </div>
 </div>
