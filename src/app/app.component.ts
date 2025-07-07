@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { Store } from '@ngrx/store';
-import { MOCK_USERS } from '../user';
-import { loadUsers, loadUsersSuccess } from '../store/users/users.actions';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,10 +12,7 @@ import { CommonModule } from '@angular/common';
 export class AppComponent implements OnInit {
   title = 't1-app';
 
-  constructor(private store: Store) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.store.dispatch(loadUsers());
-    this.store.dispatch(loadUsersSuccess({ users: MOCK_USERS }));
-  }
+  ngOnInit(): void {}
 }

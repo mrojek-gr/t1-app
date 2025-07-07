@@ -6,6 +6,7 @@ import { selectAllUsers } from '../../store/users/users.selector';
 import { CommonModule } from '@angular/common';
 import { UserCardComponent } from '../user-card/user-card.component';
 import { PagingButtonsComponent } from './paging-buttons/paging-buttons.component';
+import { loadUsers } from '../../store/users/users.actions';
 
 @Component({
   selector: 'app-users',
@@ -19,6 +20,8 @@ export class UsersComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
+    this.store.dispatch(loadUsers());
     this.users$ = this.store.select(selectAllUsers);
+    console.log('users$', this.users$);
   }
 }
