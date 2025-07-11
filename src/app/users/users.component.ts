@@ -20,8 +20,7 @@ export class UsersComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.store.dispatch(loadUsers());
+    this.store.dispatch(loadUsers({ page: 1 }));
     this.users$ = this.store.select(selectAllUsers);
-    console.log('users$', this.users$);
   }
 }

@@ -1,12 +1,12 @@
 <div
   *ngIf="user$ | async as user"
-  class="p-8 flex gap-5 border-gray-300 rounded-lg border-4 w-10/12 mx-auto mt-20"
+  class="p-8 flex gap-5 border-b-zinc-950 rounded-lg border-2 w-10/12 mx-auto mt-20 bg-sky-200"
 >
   <img
     *ngIf="user.avatar"
     [src]="user.avatar"
     alt="User Avatar"
-    class="rounded-full mb-4 flex-2 h-auto"
+    class="rounded-full mb-4 flex-2 h-auto border-ble border-2 border-b-zinc-950"
   />
   <div
     class="flex-3 flex flex-col justify-center items-center p-4 rounded-lg gap-4 text-2xl"

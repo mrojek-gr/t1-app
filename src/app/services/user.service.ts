@@ -8,10 +8,11 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  getUsers(): Observable<any> {
+  getUsers(page: number = 1): Observable<any> {
     const headers = new HttpHeaders().set('x-api-key', 'reqres-free-v1');
+    const params = new HttpParams().set('page', page);
 
-    return this.http.get(this.apiUrl, { headers });
+    return this.http.get(this.apiUrl, { headers, params });
   }
 
   getUserById(id: number): Observable<any> {
