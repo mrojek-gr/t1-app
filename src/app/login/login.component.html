@@ -1,0 +1,30 @@
+<form
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()"
+  class="mt-40 flex flex-col gap-4 mx-auto max-w-[400px] border-4 border-gray-300 p-10"
+>
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email" />
+    <mat-error
+      *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+    >
+      Invalid Email
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password" type="password" />
+    <mat-error *ngIf="loginForm.get('password')?.errors?.['customPassword']">
+      {{ loginForm.get('password')?.errors?.['customPassword'] }}
+    </mat-error>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    type="submit"
+    [disabled]="loginForm.invalid"
+    class="loginBtn"
+  >
+    Login
+  </button>
+</form>
