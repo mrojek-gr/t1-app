@@ -11,7 +11,9 @@
   <div
     class="flex-3 flex flex-col justify-center items-center p-4 rounded-lg gap-4 text-2xl"
   >
-    <p>{{ user.first_name }} {{ user.last_name }}</p>
+    <p highlight class="transition-all duration-200">
+      {{ user.first_name | uppercase }} {{ user.last_name | uppercase }}
+    </p>
     <a [href]="'mailto:' + user.email" class="underline">{{ user.email }}</a>
   </div>
 </div>

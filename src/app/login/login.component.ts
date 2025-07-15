@@ -10,7 +10,7 @@ import {
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginService } from '../services/login.service';
-import { customPasswordValidator } from '../utils/validators/passwordValidator';
+import { customPasswordValidator } from '../utils/validators/password.validator';
 
 @Component({
   selector: 'app-login',

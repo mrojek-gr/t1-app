@@ -8,10 +8,18 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { loadUser } from '../../store/users/users.actions';
+import { UppercasePipe } from '../utils/pipes/uppercase.pipe';
+import { HighlightDirective } from '../utils/directives/highlight.directive';
 
 @Component({
   selector: 'app-user',
-  imports: [CommonModule, MatCardModule, MatButtonModule],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    UppercasePipe,
+    HighlightDirective,
+  ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })
