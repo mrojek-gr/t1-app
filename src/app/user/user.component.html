@@ -1,19 +1,21 @@
-<div
-  *ngIf="user$ | async as user"
-  class="p-8 flex gap-5 border-b-zinc-950 rounded-lg border-2 w-10/12 mx-auto mt-20 bg-sky-200"
->
-  <img
-    *ngIf="user.avatar"
-    [src]="user.avatar"
-    alt="User Avatar"
-    class="rounded-full mb-4 flex-2 h-auto border-ble border-2 border-b-zinc-950"
-  />
+<div class="h-screen w-screen flex items-center justify-center">
   <div
-    class="flex-3 flex flex-col justify-center items-center p-4 rounded-lg gap-4 text-2xl"
+    *ngIf="user$ | async as user"
+    class="p-8 flex gap-5 border-zinc-600 rounded-lg border-2 w-10/12 mx-auto bg-sky-100"
   >
-    <p highlight class="transition-all duration-200">
-      {{ user.first_name | uppercase }} {{ user.last_name | uppercase }}
-    </p>
-    <a [href]="'mailto:' + user.email" class="underline">{{ user.email }}</a>
+    <img
+      *ngIf="user.avatar"
+      [src]="user.avatar"
+      alt="User Avatar"
+      class="rounded-full mb-4 flex-2 h-auto border-ble border-2 border-b-zinc-950"
+    />
+    <div
+      class="flex-3 flex flex-col justify-center items-center p-4 rounded-lg gap-4 text-2xl"
+    >
+      <p highlight class="transition-all duration-200">
+        {{ user.first_name | uppercase }} {{ user.last_name | uppercase }}
+      </p>
+      <a [href]="'mailto:' + user.email" class="underline">{{ user.email }}</a>
+    </div>
   </div>
 </div>
