@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -33,9 +34,12 @@ export class ContactComponent {
     ]),
   });
 
+  constructor(private contactService: ContactService) {}
+
   onSubmit() {
     if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
+      const { email, message } = this.contactForm.value;
+      this.contactService.contact(email!, message!);
     }
   }
 }
