@@ -1,8 +1,10 @@
 <div class="h-screen w-screen flex items-center justify-center flex-col">
   <ul class="flex gap-8">
-    <li *ngFor="let user of users$ | async">
+    @for (user of users$ | async; track user.id) {
+    <li>
       <app-user-card [user]="user"></app-user-card>
     </li>
+    }
   </ul>
   <app-paging-buttons />
 </div>

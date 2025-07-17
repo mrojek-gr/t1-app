@@ -1,25 +1,24 @@
-<ng-container *ngIf="currentPage$ | async as currentPage">
-  <ng-container *ngIf="totalPage$ | async as totalPage"
-    ><div class="paging-buttons">
-      <button
-        mat-raised-button
-        class="round-btn"
-        (click)="handlePageChange(currentPage - 1)"
-        [disabled]="currentPage <= 1"
-      >
-        &leftarrow;
-      </button>
-      <span class="paging-buttons__info">
-        Page {{ currentPage }} of {{ totalPage }}
-      </span>
-      <button
-        mat-raised-button
-        class="round-btn"
-        (click)="handlePageChange(currentPage + 1)"
-        [disabled]="currentPage >= totalPage"
-      >
-        &rightarrow;
-      </button>
-    </div>
-  </ng-container></ng-container
->
+@if(currentPage$ | async; as currentPage){ @if(totalPage$ | async; as
+totalPage){
+<div class="paging-buttons">
+  <button
+    mat-raised-button
+    class="round-btn"
+    (click)="handlePageChange(currentPage - 1)"
+    [disabled]="currentPage <= 1"
+  >
+    &leftarrow;
+  </button>
+  <span class="paging-buttons__info">
+    Page {{ currentPage }} of {{ totalPage }}
+  </span>
+  <button
+    mat-raised-button
+    class="round-btn"
+    (click)="handlePageChange(currentPage + 1)"
+    [disabled]="currentPage >= totalPage"
+  >
+    &rightarrow;
+  </button>
+</div>
+} }
