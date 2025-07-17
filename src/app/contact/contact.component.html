@@ -1,0 +1,46 @@
+<div class="w-screen h-screen flex items-center justify-center">
+  <form
+    [formGroup]="contactForm"
+    (ngSubmit)="onSubmit()"
+    class="flex flex-col gap-4 max-w-[400px] border-3 border-zinc-400 p-10"
+  >
+    <div>
+      <mat-label>Email</mat-label>
+      <app-custom-input formControlName="email" type="email">
+      </app-custom-input>
+      <mat-error
+        *ngIf="
+          contactForm.get('email')?.invalid && contactForm.get('email')?.touched
+        "
+        class="text-xs text-red-700 w-full block"
+      >
+        Invalid Email.
+      </mat-error>
+    </div>
+    <div>
+      <mat-label>Message</mat-label>
+      <app-custom-input
+        formControlName="message"
+        [area]="true"
+        type="text"
+      ></app-custom-input>
+      <mat-error
+        *ngIf="
+          contactForm.get('message')?.invalid &&
+          contactForm.get('message')?.touched
+        "
+        class="text-xs text-red-700 w-full block"
+      >
+        Invalid Message. Minimum 10 characters
+      </mat-error>
+    </div>
+    <button
+      mat-raised-button
+      type="submit"
+      [disabled]="contactForm.invalid"
+      class="contactBtn"
+    >
+      Send
+    </button>
+  </form>
+</div>

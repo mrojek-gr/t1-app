@@ -1,0 +1,18 @@
+<ng-container *ngIf="area; else inputField">
+  <textarea
+    [value]="value"
+    (input)="handleInput($event)"
+    (blur)="onTouched()"
+    class="border-b-1 border-b-gray-600 bg-gray-200 p-4 rounded-t-sm placeholder-gray-500 text-sm w-full"
+  ></textarea>
+</ng-container>
+
+<ng-template #inputField>
+  <input
+    [type]="type || 'text'"
+    [value]="value"
+    (input)="handleInput($event)"
+    (blur)="onTouched()"
+    class="border-b border-b-gray-600 bg-gray-200 p-4 rounded-t-sm placeholder-gray-500 text-sm w-full"
+  />
+</ng-template>
