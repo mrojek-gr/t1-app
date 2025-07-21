@@ -1,26 +1,26 @@
 <div class="h-screen w-screen flex items-center justify-center">
   @if (user$ | async; as user) {
   <div
-    class="p-8 flex gap-5 border-zinc-600 rounded-lg border-2 w-10/12 mx-auto bg-sky-100 relative"
+    class="p-8 flex items-center justify-center gap-5 border-zinc-600 rounded-lg border-2 w-10/12 mx-auto bg-sky-100 relative min-h-[24rem] lg:min-h-[32rem] flex-col lg:flex-row"
   >
     <div
-      class="absolute right-5 top-5 p-4 bg-white flex items-center text-2xl gap-4 rounded-lg"
+      class="absolute right-3 top-3 p-2 sm:p-4 bg-white flex items-center gap-4 rounded-lg"
     >
       <img
         src="/like.svg"
-        class="w-10 hover:cursor-pointer"
+        class="w-5 h-5 sm:w-10 sm:h-10 hover:cursor-pointer"
         (click)="onAdd()"
       />
-      <span>{{ likes() }}</span>
+      <span class="text-xl sm:text-2xl">{{ likes() }}</span>
     </div>
     <img
       [src]="user.avatar"
       alt="User Avatar"
-      class="rounded-full mb-4 flex-2 h-auto border-ble border-2 border-b-zinc-950"
+      class="max-w-32 max-h-32 rounded-full flex-2 border-ble border-2 border-b-zinc-950 sm:max-w-72 sm:max-h-72 sm:mb-4"
     />
 
     <div
-      class="flex-3 flex flex-col justify-center items-center p-4 rounded-lg gap-4 text-2xl"
+      class="flex-3 flex flex-col justify-center items-center p-4 rounded-lg gap-4 text-xl sm:text-2xl"
     >
       <p highlight class="transition-all duration-200">
         {{ user.first_name | uppercase }} {{ user.last_name | uppercase }}

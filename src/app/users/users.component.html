@@ -1,5 +1,7 @@
-<div class="h-screen w-screen flex items-center justify-center flex-col">
-  <ul class="flex gap-8">
+<div
+  class="w-screen flex items-center justify-center flex-col mt-24 xl:mt-0 mb-8 min-h-screen"
+>
+  <ul class="flex gap-8 flex-wrap justify-center items-center">
     @for (user of users$ | async; track user.id) {
     <li>
       <app-user-card [user]="user"></app-user-card>

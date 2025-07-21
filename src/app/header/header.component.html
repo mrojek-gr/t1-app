@@ -2,7 +2,15 @@
   class="flex justify-between px-8 py-4 bg-transparent fixed top-0 left-0 w-full z-10"
 >
   <a class="text-2xl text-blue-900" routerLink="/">UserIn</a>
-  <nav>
+  <button
+    class="text-3xl md:hidden"
+    (click)="toggleMobileMenu()"
+    aria-label="Toggle menu"
+  >
+    ☰
+  </button>
+
+  <nav class="hidden md:block">
     <ul class="flex gap-8 text-xl text-gray-700">
       <li><a routerLink="/users">Users</a></li>
       <li><a routerLink="/contact">Contact</a></li>
@@ -10,3 +18,15 @@
     </ul>
   </nav>
 </menu>
+
+@if(isMobileMenuOpen){
+<nav
+  class="md:hidden bg-white shadow-md px-8 py-4 fixed top-16 left-0 w-full z-10"
+>
+  <ul class="flex flex-col gap-4 text-lg text-gray-700">
+    <li><a routerLink="/users" (click)="toggleMobileMenu()">Users</a></li>
+    <li><a routerLink="/contact" (click)="toggleMobileMenu()">Contact</a></li>
+    <li><a routerLink="/login" (click)="toggleMobileMenu()">Login</a></li>
+  </ul>
+</nav>
+}

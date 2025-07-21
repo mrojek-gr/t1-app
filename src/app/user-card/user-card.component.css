@@ -6,12 +6,31 @@
   box-shadow: none;
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 1024px) {
+    width: 9rem;
+    height: 14rem;
+  }
+}
+
+.user-text {
+  font-size: 1.2rem;
+  text-align: center;
+
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+  }
 }
 
 .user-img {
   width: 10rem;
   height: 10rem;
   margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 .user-btn-wrapper {
