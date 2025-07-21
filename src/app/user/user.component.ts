@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { map, Observable, switchMap, tap } from 'rxjs';
 import { User } from './user.model';
 import { Store } from '@ngrx/store';
@@ -25,6 +25,7 @@ import { HighlightDirective } from '../utils/directives/highlight.directive';
 })
 export class UserComponent implements OnInit {
   user$!: Observable<User | undefined>;
+  likes = signal(0);
 
   constructor(private store: Store, private route: ActivatedRoute) {}
 
@@ -35,5 +36,9 @@ export class UserComponent implements OnInit {
       tap((id) => this.store.dispatch(loadUser({ id }))),
       switchMap((id) => this.store.select(selectUserById(id)))
     );
+  }
+
+  onAdd() {
+    this.likes.update((value) => value + 1);
   }
 }

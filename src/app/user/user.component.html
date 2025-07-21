@@ -1,8 +1,18 @@
 <div class="h-screen w-screen flex items-center justify-center">
   @if (user$ | async; as user) {
   <div
-    class="p-8 flex gap-5 border-zinc-600 rounded-lg border-2 w-10/12 mx-auto bg-sky-100"
+    class="p-8 flex gap-5 border-zinc-600 rounded-lg border-2 w-10/12 mx-auto bg-sky-100 relative"
   >
+    <div
+      class="absolute right-5 top-5 p-4 bg-white flex items-center text-2xl gap-4 rounded-lg"
+    >
+      <img
+        src="/like.svg"
+        class="w-10 hover:cursor-pointer"
+        (click)="onAdd()"
+      />
+      <span>{{ likes() }}</span>
+    </div>
     <img
       [src]="user.avatar"
       alt="User Avatar"
